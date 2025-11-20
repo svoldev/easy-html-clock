@@ -1,0 +1,228 @@
+:root {
+    --dp: min(1vh, 1vw)
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #eaeaea;
+    min-height: 100%;
+    height: 100%;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+}
+
+.clock {
+    width: calc(var(--dp) * 50);
+    height: calc(var(--dp) * 50);
+    background: #ffffff;
+    border: 1rem solid #333333;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+
+    box-shadow: 0 0 50px -10px #333333,
+        inset 0 0 10px #333333;
+}
+
+.clock .legend .sector {
+    --nth: 0;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transform:
+        rotate(calc(6deg * var(--nth)))
+        translateY(calc(var(--dp) * -25))
+}
+
+.clock .legend .sector::before {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: block;
+    width: 3px;
+    height: 0.75rem;
+
+    background: #333333;
+}
+
+.clock .legend .sector .liter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    font: 3.5rem Arial;
+    font-weight: 600;
+    color: #333333;
+
+    transform:
+        translate(-50%, -50%)
+        translateY(3.5rem)
+        rotate(calc(-6deg * var(--nth)));
+}
+
+.clock .legend .sector .liter::before {
+    content: '';
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    display: block;
+    width: 5px;
+    height: 2rem;
+    background: #333333;
+
+    transform: 
+        translate(-50%, -50%)
+        rotate(calc(6deg * var(--nth)))
+        translateY(-3rem);
+}
+
+.clock .state {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    display: block;
+    width: 0;
+    height: 0;
+
+    transform: translate(-50%, -50%);
+
+    border: var(--dp) solid #333333;
+    border-radius: 50%;
+
+    box-shadow: 0 0 10px #333333;
+}
+
+.clock .state > * {
+    display: block;
+}
+
+.clock .state > *::before {
+    content: '';
+    display: block;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -100%);
+}
+
+.clock .state .hour::before {
+    width: var(--dp);
+    height: calc(var(--dp) * 10);
+    border-radius: calc(var(--dp) / 2);
+    background: #333333;
+}
+
+.clock .state .minute::before {
+    width: calc(var(--dp) / 2);
+    height: calc(var(--dp) * 15);
+    border-radius: calc(var(--dp) / 4);
+    background: #333333;
+}
+
+.clock .state .second::before {
+    width: calc(var(--dp) / 4);
+    height: calc(var(--dp) * 22);
+    border-radius: calc(var(--dp) / 8);
+    background: #ef0330;
+
+    transform: translate(-50%, -90%);
+}
+
+.clock .state .second::after {
+    content: '';
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    display: block;
+    width: 0;
+    height: 0;
+    border: calc(var(--dp) / 2) solid #ef0330;
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+.clock .legend .sector:nth-child(1) {--nth: 1}
+.clock .legend .sector:nth-child(2) {--nth: 2}
+.clock .legend .sector:nth-child(3) {--nth: 3}
+.clock .legend .sector:nth-child(4) {--nth: 4}
+.clock .legend .sector:nth-child(5) {--nth: 5}
+.clock .legend .sector:nth-child(6) {--nth: 6}
+.clock .legend .sector:nth-child(7) {--nth: 7}
+.clock .legend .sector:nth-child(8) {--nth: 8}
+.clock .legend .sector:nth-child(9) {--nth: 9}
+.clock .legend .sector:nth-child(10) {--nth: 10}
+.clock .legend .sector:nth-child(11) {--nth: 11}
+.clock .legend .sector:nth-child(12) {--nth: 12}
+.clock .legend .sector:nth-child(13) {--nth: 13}
+.clock .legend .sector:nth-child(14) {--nth: 14}
+.clock .legend .sector:nth-child(15) {--nth: 15}
+.clock .legend .sector:nth-child(16) {--nth: 16}
+.clock .legend .sector:nth-child(17) {--nth: 17}
+.clock .legend .sector:nth-child(18) {--nth: 18}
+.clock .legend .sector:nth-child(19) {--nth: 19}
+.clock .legend .sector:nth-child(20) {--nth: 20}
+.clock .legend .sector:nth-child(21) {--nth: 21}
+.clock .legend .sector:nth-child(22) {--nth: 22}
+.clock .legend .sector:nth-child(23) {--nth: 23}
+.clock .legend .sector:nth-child(24) {--nth: 24}
+.clock .legend .sector:nth-child(25) {--nth: 25}
+.clock .legend .sector:nth-child(26) {--nth: 26}
+.clock .legend .sector:nth-child(27) {--nth: 27}
+.clock .legend .sector:nth-child(28) {--nth: 28}
+.clock .legend .sector:nth-child(29) {--nth: 29}
+.clock .legend .sector:nth-child(30) {--nth: 30}
+.clock .legend .sector:nth-child(31) {--nth: 31}
+.clock .legend .sector:nth-child(32) {--nth: 32}
+.clock .legend .sector:nth-child(33) {--nth: 33}
+.clock .legend .sector:nth-child(34) {--nth: 34}
+.clock .legend .sector:nth-child(35) {--nth: 35}
+.clock .legend .sector:nth-child(36) {--nth: 36}
+.clock .legend .sector:nth-child(37) {--nth: 37}
+.clock .legend .sector:nth-child(38) {--nth: 38}
+.clock .legend .sector:nth-child(39) {--nth: 39}
+.clock .legend .sector:nth-child(40) {--nth: 40}
+.clock .legend .sector:nth-child(41) {--nth: 41}
+.clock .legend .sector:nth-child(42) {--nth: 42}
+.clock .legend .sector:nth-child(43) {--nth: 43}
+.clock .legend .sector:nth-child(44) {--nth: 44}
+.clock .legend .sector:nth-child(45) {--nth: 45}
+.clock .legend .sector:nth-child(46) {--nth: 46}
+.clock .legend .sector:nth-child(47) {--nth: 47}
+.clock .legend .sector:nth-child(48) {--nth: 48}
+.clock .legend .sector:nth-child(49) {--nth: 49}
+.clock .legend .sector:nth-child(50) {--nth: 50}
+.clock .legend .sector:nth-child(51) {--nth: 51}
+.clock .legend .sector:nth-child(52) {--nth: 52}
+.clock .legend .sector:nth-child(53) {--nth: 53}
+.clock .legend .sector:nth-child(54) {--nth: 54}
+.clock .legend .sector:nth-child(55) {--nth: 55}
+.clock .legend .sector:nth-child(56) {--nth: 56}
+.clock .legend .sector:nth-child(57) {--nth: 57}
+.clock .legend .sector:nth-child(58) {--nth: 58}
+.clock .legend .sector:nth-child(59) {--nth: 59}
+.clock .legend .sector:nth-child(60) {--nth: 60}
